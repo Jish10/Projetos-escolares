@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - João Melicio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(45deg, #eee, #888);
+      animation: gradientAnimation 3s infinite alternate-reverse;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    header {
+      background: linear-gradient(45deg, #ff8c00, #ff007f);
+      padding: 1em;
+      text-align: center;
+      color: #fff;
+      animation: headerAnimation 4s infinite alternate-reverse;
+    }
+
+    @keyframes headerAnimation {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    header img {
+      border-radius: 100%;
+      max-width: 100px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background: linear-gradient(45deg, #333, #444);
+      padding: 0.5em;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      background: linear-gradient(45deg, #555, #666);
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background: linear-gradient(45deg, #777, #888);
+    }
+
+    section {
+      padding: 10px;
+      display: none;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    section.active {
+      display: block;
+    }
+
+    footer {
+      background: linear-gradient(45deg, #333, #444);
+      color: #fff;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="imagens/PSX_20231202_220555.jpg">
+    <h1>João Melicio</h1>
+    <p>Aluno Universitário</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showTab('menu')">Menu</a>
+    <a href="#" onclick="showTab('projects')">Projetos</a>
+    <a href="#" onclick="showTab('contact')">Contactos</a>
+  </nav>
+
+  <section id="menu" class="active">
+    <h1>Menu</h1>
+    <h2>Apresentação</h2>
+    <p>Eu sou João Melicio, um estudante universitário de Engenharia Informática com foco em engenharia de software.
+       No 12º ano, iniciei o projeto de uma empresa chamada Animōru, mas devido a desafios, o pausamos.
+        Essa experiência aprimorou minhas habilidades técnicas e empresariais, ensinando-me a enfrentar adversidades.</p>
+
+      <p>Atualmente, na universidade, busco oportunidades para aplicar essas lições. Estou envolvido em projetos acadêmicos desafiadores, colaborando para impulsionar a inovação na engenharia de software. Minha jornada reforçou meu compromisso em ser um profissional exemplar, contribuindo para soluções impactantes no campo tecnológico.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Meus Projetos</h2>
+    <ul>
+      <li>Animōru (Projeto empresarial)</li>
+      <li>Jogo Reversi (Em desenvolvimento)</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contato</h2>
+    <p>Email: joaomelicio82@gmail.com</p>
+    <p>GitHub: github.com/jish10</p>
+    <p>Telefone: +238 9983679</p>
+  </section>
+
+  <footer>
+    &copy; 2023 João Melicio
+  </footer>
+
+  <script>
+    function showTab(tabName) {
+      var tabs = document.getElementsByTagName('section');
+      for (var i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('active');
+      }
+      document.getElementById(tabName).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
+
